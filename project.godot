@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [display]
 
 window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/window_width_override=1280
+window/size/window_height_override=960
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -26,3 +30,7 @@ version_control/autoload_on_startup=true
 [physics]
 
 common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

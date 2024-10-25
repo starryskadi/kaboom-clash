@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcy6esvoy4e4b"]
+
+[ext_resource type="Script" path="res://scene/player.gd" id="1_vnmi4"]
+[ext_resource type="Texture2D" uid="uid://cwndvpcevgitd" path="res://assets/bomb-man.png" id="2_7blcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tm0l"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyu6o"]
+atlas = ExtResource("2_7blcu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1rjh"]
+atlas = ExtResource("2_7blcu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp0ig"]
+atlas = ExtResource("2_7blcu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbhjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyu6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1rjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp0ig")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vnmi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4tm0l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vbhjy")
+animation = &"idle"
+autoplay = "idle"
