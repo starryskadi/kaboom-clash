@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://558js3gnd7hy"]
+
+[ext_resource type="PackedScene" uid="uid://djxrtglla288v" path="res://scene/bomb.tscn" id="1_kotnn"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l7gua"]
+resource_name = "items"
+scenes/1/scene = ExtResource("1_kotnn")
+
+[sub_resource type="TileSet" id="TileSet_1l0f4"]
+sources/0 = SubResource("TileSetScenesCollectionSource_l7gua")
+
+[node name="Game" type="Node2D"]
+
+[node name="Bomb" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_1l0f4")
+collision_visibility_mode = 2
+navigation_enabled = false
